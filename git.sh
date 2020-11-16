@@ -27,4 +27,5 @@ git add .
 
 git commit -m '测试提交'
 
-git push -u -f dev master
+git push -u -f git@github.com:McdullD/lxk0301_scripts.git master
+
