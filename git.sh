@@ -23,5 +23,8 @@
 
 git pull lxk master
  
+git add .
+
+git commit -m '测试提交'
 
 git push -u -f dev master
