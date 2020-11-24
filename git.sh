@@ -21,7 +21,7 @@
 
 
 
-git pull lxk master
+git pull --no-edit lxk master
  
 git add .
 
