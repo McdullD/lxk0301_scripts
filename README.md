@@ -72,6 +72,8 @@
 **TODO**
 - [ ] 所有活动互助码在一个脚本打印
 
+## [邀请码互助入口](https://github.com/lxk0301/jd_scripts/discussions)
+
 ## 食用方法
 
 ### 方法一：本地安装Node.js，下载本库脚本
@@ -109,6 +111,7 @@
 
 ### 方法四：iOS系统的代理软件（QuantumultX, Surge, Loon, 小火箭）
 
+<<<<<<< HEAD
 #### 以下内容只针对iOS用户
 
 #### ios使用多个京东账号，需要使用BoxJs保存多会话进行切换 
@@ -132,6 +135,9 @@
  2、所有脚本的cookie都可以备份，方便你迁移到其他支持box的软件。
 
  3、box可以支持多账号
+=======
+#### [京东cookie获取脚本](https://raw.githubusercontent.com/lxk0301/jd_scripts/master/JD_extra_cookie.js)
+>>>>>>> 4959c74c5ac999c8586958d006620f538ff07bb5
 
 ### 赞赏码(开发维护不易,请赏杯茶水费)
 <div align=center><img width="250" height="250" src="https://raw.githubusercontent.com/lxk0301/jd_scripts/master/icon/thanks.jpg"/></div>
