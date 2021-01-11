@@ -7,11 +7,11 @@ name:  jd_unbind 注销京东会员卡
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 7 * * *'
+    - cron: '50 15 * * 6'
   # watch:
   #   types: started
   repository_dispatch:
-    types: syj
+    types: unbind
 jobs:
   build:
 

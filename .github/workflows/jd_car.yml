@@ -6,7 +6,7 @@ name: jd_car 京东汽车
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 7 * * *'
+    - cron: '0 16 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: jd_car
         run: |
-          git clone https://github.com/promise821/jd_scripts1207.git ~/scripts
+          git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:

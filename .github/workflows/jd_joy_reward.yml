@@ -6,7 +6,7 @@ name: jd_joy_reward 宠汪汪积分兑换京豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 0,4,8,16 * * *'
+    - cron: '55 3,7,15,23 * * *'
   # watch:
   #   types: started
   repository_dispatch:
@@ -19,7 +19,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/promise821/jd_scripts1207.git ~/scripts
+          git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:

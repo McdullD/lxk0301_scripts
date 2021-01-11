@@ -7,11 +7,11 @@ name:  jd_crazy_joy_coin 挂机领金币/宝箱专用
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 7 * * *'
+    - cron: '0 17,2,10 * * *'
   # watch:
   #   types: started
   repository_dispatch:
-    types: syj
+    types: crazy_joy_coin
 jobs:
   build:
 
@@ -20,7 +20,8 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/promise821/jd_scripts1207.git ~/scripts
+          #git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
+          git clone -b master https://github.com/lxk0301/jd_scripts.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:

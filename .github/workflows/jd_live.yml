@@ -7,11 +7,11 @@ name: jd_live 京东直播，每日18豆
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 7 * * *'
+    - cron: '8-18/5 4 * * *'
   # watch:
   #   types: started
   repository_dispatch:
-    types: syj
+    types: jd_live
 jobs:
   build:
 
@@ -20,7 +20,7 @@ jobs:
     steps:
       - name: Checkout
         run: |
-          git clone https://github.com/promise821/jd_scripts1207.git ~/scripts
+          git clone https://github.com/nbzongzong/jd_scripts1207.git ~/scripts
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
