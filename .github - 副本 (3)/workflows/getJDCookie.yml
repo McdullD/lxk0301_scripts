@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_family 京东家庭号
+name: 扫码获取京东cookie
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */2 * * *'
+  # schedule:
+    # - cron: '0 0 * * *'
   # watch:
-  #   types: started
+  #       types: started
   repository_dispatch:
-    types: family
+    types: GetJdCookie
 jobs:
   build:
 
@@ -31,14 +31,18 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【京东家庭号】'
+      - name: '运行 【扫码获取京东cookie】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_family.js
+          node getJDCookie.js
         env:
-          JD_COOKIE: ${{ secrets.JD_COOKIE }}
+        
+          #JD_COOKIE: ${{ secrets.JD_COOKIE }} 
+          #京东日志打印
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+
+
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
@@ -57,6 +61,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-                    #pushplus推送
+          #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
