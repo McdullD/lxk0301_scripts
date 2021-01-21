@@ -1,6 +1,14 @@
 version: "1"
+<<<<<<< HEAD
 rules:                      # Array of rules。。。
   - base: main            # Required. Target branch
     upstream: nbzongzong:main    # Required. Must be in the same fork network.
     mergeMethod: merge  # Optional, one of [none, merge, squash, rebase, hardreset], Default: none.
     mergeUnstable: true    # Optional, merge pull request even when the mergeable_state is not clean. Default: false
+=======
+rules:                      # Array of rules
+  - base: main            # Required. Target branch
+    upstream: nbzongzong:main    # Required. Must be in the same fork network.
+    mergeMethod: merge  # Optional, one of [none, merge, squash, rebase, hardreset], Default: none.
+    mergeUnstable: true    # Optional, merge pull request even when the mergeable_state is not clean. Default: false
+>>>>>>> 4f2a62c53079314a6a94c36d98ead2c1d347a693
