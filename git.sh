@@ -6,7 +6,7 @@
 #设定远程地址
 #git remote add dev https://github.com/lxk0301/jd_scripts.git
 
-
+#git remote add zong https://github.com/nbzongzong/Actions
 
 #git push -u -f dev master 
 #提交到远程仓库
@@ -22,8 +22,10 @@
 
 
 #git pull --no-edit lxk master
-git pull --no-edit https://github.com/nbzongzong/Actions
- 
+#git pull --no-edit zong main --allow-unrelated-histories
+#git pull --no-edit https://github.com/nbzongzong/Actions
+git pull --no-edit zong main --allow-unrelated-histories
+
 git add .
 
 git commit -m '同步zong'
