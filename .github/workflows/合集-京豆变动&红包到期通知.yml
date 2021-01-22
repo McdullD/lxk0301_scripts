@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: 全民开红包&年货节&秒秒币&盲盒抽京豆
+# jd_bean_change,HBDetail
+name: 合集-京豆变动&红包到期通知
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 23 * * *'
-  # watch:
-  #   types: started
+    - cron: '0 0 * * *'
+  watch:
+    types: started
   repository_dispatch:
-    types: redPacket
+    types: bean_change
 jobs:
   build:
 
@@ -31,14 +31,12 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【全民开红包&京东年货节&京东秒秒币&盲盒抽京豆】'
-        run: |
-          cd  ~/scripts
-          npm install
-          node jd_redPacket.js
-          node jd_nh.js
-          node jd_ms.js
-          node jd_mh.js          
+      - name: '运行 【京豆变动&红包到期通知】'
+        run: | 
+          cd ~/scripts
+          npm install 
+          node jd_bean_change.js
+          node HBDetail.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
@@ -60,6 +58,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-          #pushplus推送
+                    #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}

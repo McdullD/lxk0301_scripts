@@ -1,14 +1,14 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 # jd_joy_feedPets,jd_joy_steal,jd_daily_egg,jd_superMarket
-name:  宠汪汪喂食&偷狗粮&天天提鹅&东东超市
+name:  合集-宠汪汪喂食&偷狗粮&天天提鹅&东东超市
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 */3 * * *'
-  # watch:
-  #   types: [started]
+  watch:
+    types: [started]
   repository_dispatch:
     types: joy_feedPets
 jobs:
