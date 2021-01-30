@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: jd_joy 宠汪汪
+name: jd_5g 5G狂欢城(2021-2-4)
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 1,10,16 * * *'
+    - cron: '0 4,10,16,22 * * *'
   # watch:
   #   types: started
   repository_dispatch:
-    types: joy
+    types: jd_5g
 jobs:
   build:
 
@@ -31,18 +31,17 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【宠汪汪】'
+      - name: '运行 【5G狂欢城】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_joy.js
+          node jd_5g.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
-          JOY_RUN_FLAG: ${{ secrets.JOY_RUN_FLAG }}
-          JOY_TEAM_LEVEL: ${{ secrets.JOY_TEAM_LEVEL }}
-          JOY_RUN_NOTIFY: ${{ secrets.JOY_RUN_NOTIFY }}
+          
+          JD818_SHARECODES: ${{ secrets.JD818_SHARECODES }}
+          
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
