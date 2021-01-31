@@ -30,7 +30,11 @@ git add .
 
 git commit -m '同步zong'
 
+<<<<<<< HEAD
 git pull
 
 #git push -u -f git@github.com:McdullD/lxk0301_scripts.git master
 
+=======
+git push -u -f git@github.com:McdullD/lxk0301_scripts.git master
+>>>>>>> ae28cc5d75e4344e5ba63563693e8735305a6476
