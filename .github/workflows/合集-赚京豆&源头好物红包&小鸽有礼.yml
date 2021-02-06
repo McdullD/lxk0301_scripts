@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: jd_5g 5G狂欢城(2021-2-4)
+# jd_syj,jd_super_box,jd_xg,jd_xgyl
+name: 合集-赚京豆&小鸽&小鸽有礼[2021-2-19 end]
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 4,10,16,22 * * *'
-  # watch:
-  #   types: started
+    - cron: '10 17 * * *'
+  watch:
+    types: started
   repository_dispatch:
-    types: jd_5g
+    types: syj
 jobs:
   build:
 
@@ -31,16 +31,18 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【5G狂欢城】'
-        run: |
-          cd  ~/scripts
-          npm install
-          node jd_5g.js
+      - name: '运行 【赚京豆&小鸽&小鸽有礼】'
+        run: |  
+          cd ~/scripts
+          npm install 
+          node jd_syj.js
+          node jd_xg.js
+          node jd_xgyl.js
+
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          
-          JD818_SHARECODES: ${{ secrets.JD818_SHARECODES }}
+          JDSUPERBOX_SHARECODES: ${{ secrets.JDSUPERBOX_SHARECODES }}
           
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}

@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-# jd_nian_sign,jd_nian_ar,jd_nian_wechat
-name:  合集-炸年兽签到/AR/小程序/炸年兽
+
+name: jd_immortal 京东神仙书院
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '15 1,16 * * *'
-  watch:
-    types: started
+    - cron: '30 16,19 * * *'
+  # watch:
+  #   types: started
   repository_dispatch:
-    types: jd_nian_sign
+    types: jd_immortal
 jobs:
   build:
 
@@ -31,19 +31,18 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('package-lock.json') }} # 使用 package-lock.json 的 Hash 作为缓存的 key。也可以使用 package.json 代替
-      - name: '运行 【合集-京东炸年兽签到任务🧨/AR/小程序/京东炸年兽🧨】'
+      - name: '运行 【京东神仙书院】'
         run: |
           cd  ~/scripts
           npm install
-          node jd_nian.js
-          node jd_nian_sign.js
-          node jd_nian_ar.js
-          node jd_nian_wechat.js
+          node jd_immortal.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
-          JDNIAN_SHARECODES: ${{secrets.JDNIAN_SHARECODES}}
-          JD_WECHAT_USER_AGENT: ${{ secrets.JD_WECHAT_USER_AGENT }}
+          
+          JDSXSY_SHARECODES: ${{ secrets.JDSXSY_SHARECODES }}
+          JD_IMMORTAL_LATLON: ${{ secrets.JD_IMMORTAL_LATLON }} #JD_IMMORTAL_LATLON={"lat":33.1, "lng":118.1}
+          #经纬度查询 http://api.map.baidu.com/lbsapi/getpoint/index.html
           #微信酱
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           #BARK推送
@@ -62,6 +61,6 @@ jobs:
           #酷推(Cool Push)推送
           QQ_SKEY: ${{ secrets.QQ_SKEY }}
           QQ_MODE: ${{ secrets.QQ_MODE }}
-                    #pushplus推送
+          #pushplus推送
           PUSH_PLUS_TOKEN: ${{ secrets.PUSH_PLUS_TOKEN }}
           PUSH_PLUS_USER: ${{ secrets.PUSH_PLUS_USER }}
